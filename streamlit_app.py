@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-model = pickle.load(open('model/model_rf.pkl', 'rb'))
+model = pickle.load(open('model_rf.pkl', 'rb'))
 species_mapping = {
     0: "Setosa",
     1: "Versicolor",
@@ -9,9 +9,9 @@ species_mapping = {
 }
 
 species_images = {
-    "Setosa": "images/setosa.jpg",
-    "Versicolor": "images/versicolor.jpg",
-    "Virginica": "images/virginica.jpg"
+    "Setosa": "setosa.jpg",
+    "Versicolor": "versicolor.jpg",
+    "Virginica": "virginica.jpg"
 }
 
 
@@ -36,5 +36,6 @@ if submitted:
         st.image(image_path, caption=predicted_species, use_container_width=True)
     else:
         st.warning("No image available for this species.")
+
 
 
